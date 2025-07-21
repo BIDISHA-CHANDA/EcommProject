@@ -7,36 +7,37 @@ import { signUp, login } from '../models/model';
   providedIn: 'root'
 })
 export class UserService {
+  invalidUserAuth = new EventEmitter<boolean>(false);
 
-  invalidUserAuth= new EventEmitter<boolean>(false)
-  constructor(private http: HttpClient, private router:Router) { }
-  userSignUp(user:signUp){
-   this.http.post('http://localhost:3000/users',user,{observe:'response'})
-   .subscribe((result)=>{
-    if(result){
-      localStorage.setItem('user',JSON.stringify(result.body));
-      this.router.navigate(['/']);
-    }
-    
-   })
-    
+  constructor(private http: HttpClient, private router: Router) { }
+
+  userSignUp(user: signUp) {
+    this.http.post('https://json-server-api-dnnf.onrender.com/users', user, { observe: 'response' })
+      .subscribe((result) => {
+        if (result) {
+          localStorage.setItem('user', JSON.stringify(result.body));
+          this.router.navigate(['/']);
+        }
+      });
   }
-  userLogin(data:login){
-    this.http.get<signUp[]>(`http://localhost:3000/users?email=${data.email}&password=${data.password}`,
-    {observe:'response'}
-    ).subscribe((result)=>{
-      if(result && result.body?.length){
-        localStorage.setItem('user',JSON.stringify(result.body[0]));
+
+  userLogin(data: login) {
+    this.http.get<signUp[]>(
+      `https://json-server-api-dnnf.onrender.com/users?email=${data.email}&password=${data.password}`,
+      { observe: 'response' }
+    ).subscribe((result) => {
+      if (result && result.body?.length) {
+        localStorage.setItem('user', JSON.stringify(result.body[0]));
         this.router.navigate(['/']);
-        this.invalidUserAuth.emit(false)
-      }else{
-        this.invalidUserAuth.emit(true)
+        this.invalidUserAuth.emit(false);
+      } else {
+        this.invalidUserAuth.emit(true);
       }
-    })
+    });
   }
 
-  userAuthReload(){
-    if(localStorage.getItem('user')){
+  userAuthReload() {
+    if (localStorage.getItem('user')) {
       this.router.navigate(['/']);
     }
   }

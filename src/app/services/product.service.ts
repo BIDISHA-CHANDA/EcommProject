@@ -43,7 +43,7 @@ export class ProductService {
 
   searchProduct(category: string) {
     return this.http.get<product[]>(
-      `https://json-server-api-dnnf.onrender.com/products?category=${category}`
+      `https://json-server-api-dnnf.onrender.com/products?q=${category}`
     );
   }
 

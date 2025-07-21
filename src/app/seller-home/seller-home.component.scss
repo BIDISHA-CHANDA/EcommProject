@@ -1,17 +1,80 @@
-table{
-    text-align: left;
+.product-list {
+    padding: 40px;
+    background-color: #fefcff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .product-list h1 {
+    text-align: center;
     color: blueviolet;
+    margin-bottom: 20px;
+    font-size: 32px;
+  }
+  
+  .message-p {
+    text-align: center;
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
     border-collapse: collapse;
-}
-img{
-    height: 100px;
-    width: 100px;
-}
-table td , table th{
-    border: 1px solid blueviolet;
-    padding: 10px;
-    min-width: 160pxs;
-}
-.adjust-update-link{
-    margin-left: 10px;
-}
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  thead {
+    background-color: blueviolet;
+    color: #fff;
+  }
+  
+  thead th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  
+  tbody tr {
+    border-bottom: 1px solid #eee;
+  }
+  
+  tbody tr:hover {
+    background-color: #f9f5ff;
+  }
+  
+  tbody td {
+    padding: 12px 16px;
+    font-size: 14px;
+    vertical-align: middle;
+    color: #333;
+  }
+  
+  tbody td img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  button {
+    padding: 6px 12px;
+    background-color: crimson;
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: darkred;
+  }
+  

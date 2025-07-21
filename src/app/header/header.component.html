@@ -4,7 +4,7 @@
   <div *ngIf="menuType!=='seller'" class="nav-search">
     <input type="text"
     #searchInput
-    (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="Search Products" />
+    (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="Search Products by category e.g saree, truck etc" />
     <button (click)="submitSearch(searchInput.value);searchInput.value = ''" >Search</button>
     <ul class="suggested-search" *ngIf="searchResult">
       <li *ngFor="let item of searchResult">

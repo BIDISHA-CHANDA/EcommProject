@@ -41,4 +41,6 @@ export class HomeComponent {
     }, 5000); // every 3 seconds
   }
 
+  
+
 }

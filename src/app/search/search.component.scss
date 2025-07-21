@@ -1,0 +1,37 @@
+.search-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .search-item {
+    display: flex;
+    gap: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+  }
+  
+  .search-image img {
+    width: 150px;
+    height: auto;
+    border-radius: 6px;
+  }
+  
+  .search-details {
+    flex: 1;
+  }
+  
+  .search-details h6 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .search-details p {
+    margin: 0.25rem 0;
+    color: #333;
+  }
+  

@@ -1,0 +1,39 @@
+<div class="carousel-container" *ngIf="popularProducts?.length">
+    <div class="carousel-slide">
+      <div 
+        class="carousel-item" 
+        *ngFor="let item of popularProducts; let i = index"
+        [class.active]="i === currentSlide"
+      >
+        <a [routerLink]="['/details', item.id]">
+          <img [src]="item.image" [alt]="item.name" class="carousel-img" />
+        </a>
+        <div class="carousel-caption">
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Navigation Buttons -->
+    <button class="carousel-btn prev" (click)="prevSlide()">❮</button>
+    <button class="carousel-btn next" (click)="nextSlide()">❯</button>
+  </div>
+  <div class="product-list-wrapper">
+    <h1>Trendy Products</h1>
+    <div class="product-row">
+      <div class="product-card" *ngFor="let item of trendyProducts">
+        <img [src]="item.image" alt="{{ item.name }}">
+        <div class="product-details">
+          <h6>{{ item.name }}</h6>
+          <p>Price: {{ item.price }}</p>
+          <p>Color: {{ item.color }}</p>
+        </div>
+        <div class="product-footer">
+          <a [routerLink]="'/details/' + item.id">View Details</a>
+          <a href="#">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -13,12 +13,13 @@ export class HeaderComponent {
   menuType: string = 'default';
   sellerName:string="";
   userName:string="";
+  isCartClicked:boolean=false;
  // searchResult:undefined|product[];
   cartItems=0;
   searchResult:undefined|product[];
 
   constructor(private route: Router, private product:ProductService) {}
-
+isLoggedIn:boolean=false;
   ngOnInit(): void {
     this.route.events.subscribe((val: any) => {
       console.log(val)
@@ -75,6 +76,14 @@ export class HeaderComponent {
       })      
       
     }
+  }
+  onCartClick()
+  {
+    this.isCartClicked=true;
+  }
+  hideNotification()
+  {
+    this.isLoggedIn=false;
   }
   hideSearch(){
     this.searchResult=undefined

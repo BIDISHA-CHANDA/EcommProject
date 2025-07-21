@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { order } from '../app/models/model';
-import { ProductService } from '../app/services/product.service';
+import { order } from '../models/model';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-my-orders',
